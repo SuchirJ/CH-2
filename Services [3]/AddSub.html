@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Document</title>
+</head>
+<body ng-controller="myCtrl">
+    
+    Enter Number A: <input type="number" ng-model="a">
+    Enter Number B: <input type="number" ng-model="b">
+    <button ng-click="Add()">Add</button>
+    <button ng-click="Sub()">Subtract</button>
+
+    <p>Ans: {{ value }}</p>
+
+    <script>
+        angular.module('myApp',[]).controller('myCtrl',function($scope,myService){
+            $scope.a = '';
+            $scope.b = '';
+            $scope.Add = function(){
+                $scope.value = myService.Addition($scope.a,$scope.b);
+            }
+            $scope.Sub = function(){
+                $scope.value = myService.Subtraction($scope.a,$scope.b);
+            }
+        })
+        .service('myService',function(){
+            this.Addition = function(x,y){
+                return x+y;
+            }
+            this.Subtraction = function(x,y){
+                return x-y;
+            }
+        });
+    </script>
+</body>
+</html>

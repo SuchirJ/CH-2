@@ -1,0 +1,20 @@
+<!-- The ng-disabled directive sets the disabled attribute of a form field (input, select, or textarea). -->
+
+<html lang="en">
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    Click here to disable all the form fields:<input type="checkbox" ng-model="all"/> <br><br>
+
+    <input type="text" ng-disabled="all" />
+    <input type="radio" ng-disabled="all" />
+
+    <select ng-disabled="all">
+      <option>Female</option>
+      <option>Male</option>
+    </select>
+
+  </body>
+</html>

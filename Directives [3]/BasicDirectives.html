@@ -1,0 +1,33 @@
+<!-- 
+The "ng-app" directive initializes an AngularJS application. 
+The "ng-init" directive initializes application data.
+The "ng-model" directive binds the value of HTML controls (input, select, textarea) to application data.
+The "ng-bind" directive tells AngularJS to replace the content of an HTML element with the value of a given variable
+The "ng-controller" directive adds a controller to your application.
+-->
+
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <title>Document</title>
+</head>
+<body ng-controller="myCtrl">
+    
+    <div>
+        <h1>Product Name: {{ protuctName }}</h1>
+    </div>
+    <div ng-init="quantity=1;price=5">
+        Quantity: <input type="number" ng-model="quantity"> 
+        Costs: <input type="number" ng-model="price"> 
+        <p>Total is: {{ quantity * price }}</p>
+    </div>
+
+    <script>
+        var app = angular.module('myApp',[]);
+        app.controller('myCtrl',function($scope){
+            $scope.protuctName = "Pizza"
+        });
+    </script>
+</body>
+</html>

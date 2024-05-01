@@ -1,0 +1,25 @@
+<!---Formats number-->
+
+<!DOCTYPE html>
+<html>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <body ng-app="myApp" ng-controller="nCtrl">
+    <div>
+      <h1>{{prize | number}}</h1>
+    </div>
+
+    <div>
+      <h1>{{weight | number : 3}} kg</h1>
+    </div>
+
+    <script>
+      var app = angular.module("myApp", []);
+      app.controller("nCtrl", function ($scope) {
+        $scope.prize = 1000000;
+        $scope.weight = 9999
+      });
+    </script>
+
+    <p>The prize is written as a string, but formatted as a number.</p>
+  </body>
+</html>

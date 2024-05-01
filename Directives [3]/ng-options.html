@@ -1,0 +1,24 @@
+<!-- The AngularJS ng-options directive is used to dynamically generate a list of <option> elements for the <select> elements. It uses array to fill the dropdown list. -->
+
+<!DOCTYPE html>
+<html>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+      <select ng-model="selectedName" ng-options="item for item in names">
+        <option value="">Select</option>
+      </select>
+      <p>You selected: {{selectedName}}</p>
+    </div>
+
+    <p> This example shows how to fill a dropdown list using the ng-options directive. </p>
+
+    <script>
+      var app = angular.module("myApp", []);
+      app.controller("myCtrl", function ($scope) {
+        $scope.names = ["Java", ".Net", "PHP", "C/C++", "Oracle"];
+      });
+    </script>
+
+  </body>
+</html>

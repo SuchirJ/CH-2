@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body ng-app="">
+
+<input ng-keyup="count = count + 1" ng-init="count=0" /> <!-- ng-keypress, ng-keydown -->
+
+<h1>{{count}}</h1>
+
+<p>This example will increase the value of the variable "count" every time a keypress in the input field is finished.</p>
+
+</body>
+</html>
+
+<!-- Same goes for:
+ng-mouseover
+ng-mousedown
+ng-mouseenter
+ng-mouseleave
+ng-mouseup
+-->

@@ -1,0 +1,25 @@
+<!-- A service is a function, or object, that is available for, and limited to, your AngularJS application. -->
+
+<!-- This $http service makes a request to the server, and lets your application handle the response. -->
+
+<html ng-app="myApp">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Document</title>
+</head>
+<body ng-controller="myCtrl">
+    <div>
+        <p>Message is as below:</p>
+        <h1> {{myWelcome}} </h1>
+    </div>    
+
+    <script>
+        var app = angular.module('myApp',[]);
+        app.controller('myCtrl',function($scope,$http){
+            $http.get("Welcome.html").then(function(response){
+                $scope.myWelcome = response.data;
+            });
+        });
+    </script>
+</body>
+</html>

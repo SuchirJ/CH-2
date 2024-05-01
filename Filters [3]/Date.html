@@ -1,0 +1,24 @@
+<!--Formats Date -->
+
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="datCtrl">
+
+<p>Date = {{ today | date:'dd/MM/yy' }}</p> <!-- Use: fullDate for Day, Use: dd.mm.yy for cutom date -->
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('datCtrl', function($scope) {
+    $scope.today = new Date();
+});
+</script>
+
+<p>The date filter formats a date object to a readable format.</p>
+
+</body>
+</html>

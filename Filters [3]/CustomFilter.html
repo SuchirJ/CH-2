@@ -1,0 +1,43 @@
+<html ng-app="myApp">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body ng-controller="myCtrl">
+    <div>
+      <ul>
+        <li ng-repeat="item in names">{{ item | myFilter }}</li>
+      </ul>
+    </div>
+
+    <script>
+      var app = angular.module("myApp", []);
+      app.controller("myCtrl", function ($scope) {
+        $scope.names = [
+          "Jani",
+          "Carl",
+          "Margareth",
+          "Hege",
+          "Joe",
+          "Gustav",
+          "Birgit",
+          "Mary",
+          "Kai",
+        ];
+      });
+      app.filter("myFilter", function () {
+        return function (item) {
+          var i,c,txt = "";
+          for (i = 0; i < item.length; i++) {
+            c = item[i];
+            if (i % 2 == 0) {
+              c = c.toUpperCase();
+            }
+            txt += c;
+          }
+          return txt;
+        };
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!-- Filters are added to directives, like ng-repeat, by using the pipe character |, followed by a filter: -->
+
+<html ng-app="myApp">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Document</title>
+</head>
+<body ng-controller="myCtrl">
+    <div>
+        <p>Looping with objects:</p>
+        <input type="radio" ng-model="order" value="name"> name
+        <input type="radio" id="" ng-model="order" value="country"> country
+        <ul>
+            <li ng-repeat="item in names | orderBy: order"> {{ item.name + " , " + item.country }} </li>
+        </ul>
+    </div>
+
+    <script>
+        var app = angular.module("myApp",[]);
+        app.controller("myCtrl",function($scope){   
+            $scope.order = "";
+            $scope.names = [
+                {name:'Jani',country:'Norway'},
+                {name:'Carl',country:'Sweden'},
+                {name:'Margareth',country:'England'},
+                {name:'Hege',country:'Norway'},
+                {name:'Joe',country:'Denmark'},
+                {name:'Gustav',country:'Sweden'},
+                {name:'Birgit',country:'Denmark'},
+                {name:'Mary',country:'England'},
+                {name:'Kai',country:'Norway'}
+            ];
+        });
+    </script>
+</body>
+</html>

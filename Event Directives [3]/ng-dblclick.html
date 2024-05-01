@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body ng-app="myApp" ng-controller="myCtrl">
+
+<p>Double-click the header:</p>
+
+<h1 ng-dblclick="myFunction()">Welcome</h1>
+
+<p>The header has been double-clicked {{count}} times.</p>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+        $scope.count = 0;
+        $scope.myFunction = function(){
+            $scope.count++;
+        };
+    });
+</script>
+
+</body>
+</html>
